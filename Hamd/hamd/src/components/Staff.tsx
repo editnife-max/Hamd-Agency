@@ -1,6 +1,47 @@
 'use client'
 
+import { useState } from 'react'
+import Image from 'next/image'
 import { useLanguage } from '@/context/LanguageContext'
+
+function StaffCard({ member, lang }: {
+  member: { nameEn: string; nameAr: string; titleEn: string; titleAr: string; initials: string }
+  lang: 'en' | 'ar'
+}) {
+  const [imgError, setImgError] = useState(false)
+  const src = `/images/staff/${member.initials}.jpg`
+
+  return (
+    <div className="bg-white border border-gray-100 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+      {/* Photo */}
+      <div className="relative w-full aspect-square bg-[#1a2744]">
+        {!imgError ? (
+          <Image
+            src={src}
+            alt={member.nameEn}
+            fill
+            className="object-cover"
+            onError={() => setImgError(true)}
+          />
+        ) : (
+          <div className="absolute inset-0 flex items-center justify-center">
+            <span className="text-[#c9a227] font-bold text-3xl">{member.initials}</span>
+          </div>
+        )}
+      </div>
+
+      {/* Info */}
+      <div className="p-4 text-center">
+        <p className="text-[#1a2744] font-semibold text-sm">
+          {lang === 'ar' ? member.nameAr : member.nameEn}
+        </p>
+        <p className="text-gray-400 text-xs mt-0.5">
+          {lang === 'ar' ? member.titleAr : member.titleEn}
+        </p>
+      </div>
+    </div>
+  )
+}
 
 export default function Staff() {
   const { lang, t } = useLanguage()
@@ -19,20 +60,15 @@ export default function Staff() {
 
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-5">
           {s.members.map((m) => (
-            <div key={m.initials}
-              className="bg-white border border-gray-100 rounded-xl p-5 flex flex-col items-center text-center shadow-sm hover:shadow-md transition-shadow">
-              <div className="w-14 h-14 rounded-full bg-[#1a2744] flex items-center justify-center mb-3">
-                <span className="text-[#c9a227] font-bold text-base">{m.initials}</span>
-              </div>
-              <p className="text-[#1a2744] font-semibold text-sm mb-0.5">
-                {lang === 'ar' ? m.nameAr : m.nameEn}
-              </p>
-              <p className="text-gray-400 text-xs leading-snug">
-                {lang === 'ar' ? m.titleAr : m.titleEn}
-              </p>
-            </div>
+            <StaffCard key={m.initials} member={m} lang={lang} />
           ))}
         </div>
+
+        <p className="text-center text-gray-400 text-xs mt-8">
+          {lang === 'en'
+            ? 'Replace placeholder images with real staff photos in /public/images/staff/'
+            : 'استبدل الصور التجريبية بصور حقيقية في /public/images/staff/'}
+        </p>
       </div>
     </section>
   )
