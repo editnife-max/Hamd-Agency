@@ -9,36 +9,61 @@ export default function Footer() {
   const { lang, t } = useLanguage()
 
   return (
-    <footer className="bg-[#1a5c28] text-white py-12 px-4">
-      <div className="max-w-6xl mx-auto">
-        <div className="flex flex-col items-center gap-6 mb-8">
-          <Image
-            src="/logo.jpg"
-            alt="HAMD Foreign Employment Agent PLC"
-            width={280}
-            height={94}
-            className="object-contain rounded-lg"
-          />
+    <footer className="bg-[#1a2744] text-white">
+      {/* Gold top line */}
+      <div className="h-1 bg-[#c9a227]" />
 
-          <p className="text-white/60 text-sm text-center max-w-sm">
-            {t.footer.tagline[lang]}
-          </p>
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-10">
 
-          <nav className="flex flex-wrap justify-center gap-4">
-            {NAV_LINKS.map((key) => (
-              <a
-                key={key}
-                href={`#${key}`}
-                className="text-white/70 hover:text-[#c9a227] text-sm transition-colors"
-              >
-                {t.nav[key][lang]}
-              </a>
-            ))}
-          </nav>
+          {/* Brand */}
+          <div>
+            <div className="flex items-center gap-3 mb-4">
+              <Image src="/logo-mark.png" alt="HAMD" width={44} height={44} className="h-11 w-11 object-contain rounded-sm" />
+              <div>
+                <p className="text-[#c9a227] font-bold text-base">HAMD</p>
+                <p className="text-white/40 text-[10px] tracking-widest uppercase">Foreign Employment Agent PLC</p>
+              </div>
+            </div>
+            <p className="text-white/50 text-xs leading-relaxed max-w-xs">{t.footer.tagline[lang]}</p>
+          </div>
+
+          {/* Quick links */}
+          <div>
+            <p className="text-[#c9a227] text-xs font-bold tracking-widest uppercase mb-4">
+              {lang === 'en' ? 'Quick Links' : 'روابط سريعة'}
+            </p>
+            <ul className="space-y-2">
+              {NAV_LINKS.map(key => (
+                <li key={key}>
+                  <a href={`#${key}`} className="text-white/50 hover:text-white text-sm transition-colors">
+                    {t.nav[key][lang]}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Contact summary */}
+          <div>
+            <p className="text-[#c9a227] text-xs font-bold tracking-widest uppercase mb-4">
+              {lang === 'en' ? 'Contact' : 'اتصل بنا'}
+            </p>
+            <ul className="space-y-2 text-sm text-white/50">
+              <li>{t.contact.address[lang]}</li>
+              <li>{t.contact.phone1[lang]}</li>
+              <li>{t.contact.phone2[lang]}</li>
+              <li>
+                <a href={`mailto:${t.contact.email[lang]}`} className="hover:text-white transition-colors">
+                  {t.contact.email[lang]}
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
 
         <div className="border-t border-white/10 pt-6 text-center">
-          <p className="text-white/50 text-xs">{t.footer.copyright[lang]}</p>
+          <p className="text-white/30 text-xs">{t.footer.copyright[lang]}</p>
         </div>
       </div>
     </footer>

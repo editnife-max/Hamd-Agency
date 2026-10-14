@@ -9,9 +9,10 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        navy: "#1a2744",
         brand: "#1a5c28",
         gold: "#c9a227",
-        cream: "#faf3d0",
+        cream: "#f8f5be",
       },
       fontFamily: {
         sans: ["var(--font-inter)", "system-ui", "sans-serif"],
