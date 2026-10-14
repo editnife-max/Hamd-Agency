@@ -1,6 +1,5 @@
 'use client'
 
-import Image from 'next/image'
 import { useLanguage } from '@/context/LanguageContext'
 
 const NAV_LINKS = ['home', 'about', 'services', 'staff', 'contact'] as const
@@ -18,12 +17,9 @@ export default function Footer() {
 
           {/* Brand */}
           <div>
-            <div className="flex items-center gap-3 mb-4">
-              <Image src="/logo-mark.png" alt="HAMD" width={44} height={44} className="h-11 w-11 object-contain rounded-sm" />
-              <div>
-                <p className="text-[#c9a227] font-bold text-base">HAMD</p>
-                <p className="text-white/40 text-[10px] tracking-widest uppercase">Foreign Employment Agent PLC</p>
-              </div>
+            <div className="mb-4">
+              <p className="text-[#c9a227] font-bold text-xl tracking-wide">HAMD</p>
+              <p className="text-white/40 text-[10px] tracking-widest uppercase">Foreign Employment Agent PLC</p>
             </div>
             <p className="text-white/50 text-xs leading-relaxed max-w-xs">{t.footer.tagline[lang]}</p>
           </div>

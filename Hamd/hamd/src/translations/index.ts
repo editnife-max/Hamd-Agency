@@ -42,11 +42,6 @@ export const translations = {
     subtitle: { en: 'Qualified, vetted, and ready to work', ar: 'مؤهلون وموثوقون وجاهزون للعمل' },
     items: [
       { en: 'House Maids',          ar: 'عاملات المنازل',     desc_en: 'Experienced domestic workers for households', desc_ar: 'عمالة منزلية متمرسة للأسر', icon: 'Home' },
-      { en: 'Professional Drivers', ar: 'سائقون محترفون',    desc_en: 'Licensed drivers with clean records',        desc_ar: 'سائقون مرخصون بسجلات نظيفة', icon: 'Car' },
-      { en: 'Skilled Labor',        ar: 'عمالة ماهرة',       desc_en: 'Tradespeople across construction & industry', desc_ar: 'عمال حرفيون في البناء والصناعة', icon: 'Wrench' },
-      { en: 'Medical Staff',        ar: 'كوادر طبية',         desc_en: 'Nurses, caregivers, and support staff',      desc_ar: 'ممرضون ومقدمو رعاية وطاقم دعم', icon: 'Stethoscope' },
-      { en: 'Security Personnel',   ar: 'أفراد الأمن',        desc_en: 'Trained guards for residential & commercial', desc_ar: 'حراس مدربون للمواقع السكنية والتجارية', icon: 'Shield' },
-      { en: 'Office & Admin Staff', ar: 'موظفو المكاتب',      desc_en: 'Administrators, receptionists & clerks',     desc_ar: 'إداريون وموظفو استقبال وكتبة', icon: 'Briefcase' },
     ],
   },
   staff: {
