@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import { Menu, X } from 'lucide-react'
+import Image from 'next/image'
 import { useLanguage } from '@/context/LanguageContext'
 
 const NAV_LINKS = ['home', 'about', 'services', 'staff', 'contact'] as const
@@ -13,17 +14,19 @@ export default function Navbar() {
   const handleNavClick = () => setOpen(false)
 
   return (
-    <nav
-      className="fixed top-0 left-0 right-0 z-50 bg-[#1a2744] shadow-md"
-      dir={dir}
-    >
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-[#1a5c28] shadow-md" dir={dir}>
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <a href="#home" className="flex items-center gap-2" onClick={handleNavClick}>
-            <span className="text-[#c9a227] font-bold text-xl tracking-wide">
-              {lang === 'ar' ? 'حمد' : 'HAMD'}
-            </span>
+          <a href="#home" onClick={handleNavClick} className="flex items-center">
+            <Image
+              src="/logo.jpg"
+              alt="HAMD Foreign Employment Agent PLC"
+              width={130}
+              height={44}
+              className="object-contain h-11 w-auto"
+              priority
+            />
           </a>
 
           {/* Desktop nav */}
@@ -39,7 +42,7 @@ export default function Navbar() {
             ))}
             <button
               onClick={toggle}
-              className="ml-4 px-3 py-1.5 border border-[#c9a227] text-[#c9a227] rounded text-sm font-medium hover:bg-[#c9a227] hover:text-[#1a2744] transition-colors"
+              className="ml-4 px-3 py-1.5 border border-[#c9a227] text-[#c9a227] rounded text-sm font-medium hover:bg-[#c9a227] hover:text-[#1a5c28] transition-colors"
             >
               {lang === 'en' ? 'عربي' : 'EN'}
             </button>
@@ -66,7 +69,7 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       {open && (
-        <div className="md:hidden bg-[#1a2744] border-t border-white/10 px-4 pb-4 pt-2">
+        <div className="md:hidden bg-[#1a5c28] border-t border-white/10 px-4 pb-4 pt-2">
           {NAV_LINKS.map((key) => (
             <a
               key={key}

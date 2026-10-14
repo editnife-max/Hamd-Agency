@@ -11,9 +11,9 @@ export const translations = {
   hero: {
     companyEn:  { en: 'HAMD FOREIGN EMPLOYMENT AGENT PLC', ar: 'HAMD FOREIGN EMPLOYMENT AGENT PLC' },
     companyAr:  { en: 'مكتب حمد للإستقدام',               ar: 'مكتب حمد للإستقدام' },
-    tagline:    { en: 'Your Trusted Partner in International Recruitment', ar: 'شريكك الموثوق في التوظيف الدولي' },
+    tagline:    { en: 'Trusted House Maid & Foreign Employment Agency', ar: 'وكالة موثوقة للعمالة المنزلية والتوظيف الخارجي' },
     cta:        { en: 'Contact Us',                        ar: 'تواصل معنا' },
-    subTagline: { en: 'Connecting talent with opportunity across borders', ar: 'نربط المواهب بالفرص عبر الحدود' },
+    subTagline: { en: 'Providing qualified domestic workers, house maids & skilled staff across the Gulf region', ar: 'نوفر عمالة منزلية مؤهلة وعاملات منزل وكوادر ماهرة في منطقة الخليج' },
   },
   about: {
     title:       { en: 'About Us',    ar: 'من نحن' },
@@ -58,8 +58,8 @@ export const translations = {
     title:    { en: 'Contact Us', ar: 'تواصل معنا' },
     subtitle: { en: 'Get in touch with our team today', ar: 'تواصل مع فريقنا اليوم' },
     address:  { en: 'Addis Ababa, Ethiopia', ar: 'أديس أبابا، إثيوبيا' },
-    phone:    { en: '+251 911 000 000', ar: '٠٠ ٠٠٠ ٩١١ ٢٥١+' },
-    email:    { en: 'info@hamdagency.com', ar: 'info@hamdagency.com' },
+    phone:    { en: '0926810075 / 0913539743', ar: '0926810075 / 0913539743' },
+    email:    { en: 'hamdagency8@gmail.com', ar: 'hamdagency8@gmail.com' },
     whatsapp: { en: 'WhatsApp Us', ar: 'واتساب' },
     form: {
       name:    { en: 'Full Name', ar: 'الاسم الكامل' },

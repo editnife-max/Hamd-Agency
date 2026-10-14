@@ -13,35 +13,31 @@ export default function About() {
   ]
 
   return (
-    <section id="about" className="bg-[#f8f9fa] py-20 px-4">
+    <section id="about" className="bg-[#faf3d0] py-20 px-4">
       <div className="max-w-4xl mx-auto">
-        {/* Heading */}
         <div className="text-center mb-12">
-          <h2 className="text-3xl sm:text-4xl font-bold text-[#1a2744] mb-4">
+          <h2 className="text-3xl sm:text-4xl font-bold text-[#1a5c28] mb-4">
             {a.title[lang]}
           </h2>
           <div className="w-16 h-1 bg-[#c9a227] mx-auto" />
         </div>
 
-        {/* Description */}
-        <p className="text-gray-600 text-base sm:text-lg leading-relaxed text-center mb-12">
+        <p className="text-gray-700 text-base sm:text-lg leading-relaxed text-center mb-12">
           {a.description[lang]}
         </p>
 
-        {/* Stats */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-10">
           {stats.map((stat) => (
             <div
               key={stat.label}
-              className="bg-white rounded-xl shadow-sm border border-gray-100 p-6 text-center"
+              className="bg-white rounded-xl shadow-sm border border-[#c9a227]/30 p-6 text-center"
             >
-              <p className="text-[#1a2744] font-bold text-xl">{stat.label}</p>
+              <p className="text-[#1a5c28] font-bold text-xl">{stat.label}</p>
             </div>
           ))}
         </div>
 
-        {/* License note */}
-        <p className="text-center text-sm text-[#c9a227] font-medium tracking-wide uppercase">
+        <p className="text-center text-sm text-[#1a5c28] font-semibold tracking-wide uppercase">
           {a.license[lang]}
         </p>
       </div>
