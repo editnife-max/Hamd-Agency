@@ -8,14 +8,22 @@ interface LanguageContextValue {
   dir: 'ltr' | 'rtl'
   t: typeof translations
   toggle: () => void
+  transitioning: boolean
 }
 
 const LanguageContext = createContext<LanguageContextValue | null>(null)
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
   const [lang, setLang] = useState<Lang>('en')
+  const [transitioning, setTransitioning] = useState(false)
 
-  const toggle = () => setLang(prev => prev === 'en' ? 'ar' : 'en')
+  const toggle = () => {
+    setTransitioning(true)
+    setTimeout(() => {
+      setLang(prev => (prev === 'en' ? 'ar' : 'en'))
+      setTransitioning(false)
+    }, 180)
+  }
 
   return (
     <LanguageContext.Provider value={{
@@ -23,6 +31,7 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
       dir: lang === 'ar' ? 'rtl' : 'ltr',
       t: translations,
       toggle,
+      transitioning,
     }}>
       {children}
     </LanguageContext.Provider>

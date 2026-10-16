@@ -27,7 +27,7 @@ export default function Hero() {
             src="/images/maid-hero.png"
             alt="Professional house maid services"
             fill
-            className="object-cover object-top transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+            className="object-cover object-[center_15%] transition-transform duration-700 ease-out group-hover:scale-[1.03]"
             priority
           />
           {/* Mobile: fade photo into section below */}
@@ -35,20 +35,20 @@ export default function Hero() {
           {/* Desktop: blend left edge into text column */}
           <div className="absolute inset-0 hidden lg:block"
             style={{ background: 'linear-gradient(to right, #0b1622 0%, rgba(11,22,34,0.55) 22%, transparent 52%)' }} />
-          {/* Desktop: bottom gradient behind caption */}
-          <div className="absolute bottom-0 left-0 right-0 h-40 hidden lg:block"
-            style={{ background: 'linear-gradient(to top, rgba(8,17,28,0.72) 0%, transparent 100%)' }} />
+          {/* Desktop: strong bottom gradient so caption is always readable */}
+          <div className="absolute bottom-0 left-0 right-0 h-52 hidden lg:block"
+            style={{ background: 'linear-gradient(to top, rgba(8,17,28,0.88) 0%, rgba(8,17,28,0.4) 50%, transparent 100%)' }} />
           {/* Caption */}
-          <div className="hidden lg:block absolute bottom-9 left-10 anim-slide-up" style={{ animationDelay: '950ms' }}>
-            <div className="flex items-center gap-2.5 mb-1">
-              <div className="w-5 h-px bg-[#c9a227]" />
-              <p className="text-[#c9a227] font-semibold text-sm">
-                {lang === 'en' ? 'Professional House Maids' : 'عاملات منزل محترفات'}
+          <div className="hidden lg:block absolute bottom-10 left-10 anim-slide-up" style={{ animationDelay: '950ms' }}>
+            <p className="text-[#c9a227] font-bold text-base mb-1">
+              {lang === 'en' ? 'Professional House Maids' : 'عاملات منزل محترفات'}
+            </p>
+            <div className="flex items-center gap-2">
+              <div className="w-4 h-px bg-white/30" />
+              <p className="text-white/60 text-sm">
+                {lang === 'en' ? 'Vetted · Trained · Ready' : 'موثوقات · مدربات · جاهزات'}
               </p>
             </div>
-            <p className="text-white/40 text-sm" style={{ paddingInlineStart: '1.875rem' }}>
-              {lang === 'en' ? 'Vetted · Trained · Ready' : 'موثوقات · مدربات · جاهزات'}
-            </p>
           </div>
         </div>
 

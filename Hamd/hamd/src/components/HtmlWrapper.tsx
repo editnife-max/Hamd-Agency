@@ -9,7 +9,7 @@ interface HtmlWrapperProps {
 }
 
 export default function HtmlWrapper({ children, className }: HtmlWrapperProps) {
-  const { lang, dir } = useLanguage()
+  const { lang, dir, transitioning } = useLanguage()
 
   useEffect(() => {
     document.documentElement.lang = lang
@@ -18,7 +18,15 @@ export default function HtmlWrapper({ children, className }: HtmlWrapperProps) {
 
   return (
     <html lang={lang} dir={dir} suppressHydrationWarning>
-      <body className={`${className ?? ''} antialiased`}>{children}</body>
+      <body
+        className={`${className ?? ''} antialiased`}
+        style={{
+          opacity: transitioning ? 0 : 1,
+          transition: 'opacity 0.18s ease',
+        }}
+      >
+        {children}
+      </body>
     </html>
   )
 }
