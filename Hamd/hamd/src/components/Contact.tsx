@@ -23,8 +23,11 @@ export default function Contact() {
       <div className="max-w-6xl mx-auto">
 
         <AnimateIn animation="fade-in" className="text-center mb-14">
+          <p className="text-[#c9a227] text-xs font-semibold tracking-widest uppercase mb-4">
+            {lang === 'en' ? 'Reach Out' : 'تواصل معنا'}
+          </p>
           <h2 className="font-display text-4xl sm:text-5xl font-bold text-[#1a2744] mb-4">{c.title[lang]}</h2>
-          <div className="w-14 h-0.5 bg-[#c9a227] mx-auto mb-4" />
+          <div className="w-10 h-0.5 bg-[#c9a227] mx-auto mb-4" />
           <p className="text-gray-500 text-sm">{c.subtitle[lang]}</p>
         </AnimateIn>
 

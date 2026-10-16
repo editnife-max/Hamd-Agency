@@ -47,12 +47,15 @@ export default function Staff() {
   const s = t.staff
 
   return (
-    <section id="staff" className="bg-[#f8fafc] py-24 px-4">
+    <section id="staff" className="bg-[#f8fafc] py-24 px-4 border-t border-gray-100">
       <div className="max-w-6xl mx-auto">
 
         <AnimateIn className="mb-14">
+          <p className="text-[#c9a227] text-xs font-semibold tracking-widest uppercase mb-4">
+            {lang === 'en' ? 'Our People' : 'فريقنا'}
+          </p>
           <h2 className="font-display text-4xl sm:text-5xl font-bold text-[#1a2744] mb-4">{s.title[lang]}</h2>
-          <div className="w-12 h-0.5 bg-[#c9a227] mb-4" />
+          <div className="w-10 h-0.5 bg-[#c9a227] mb-4" />
           <p className="text-gray-400 text-sm">{s.subtitle[lang]}</p>
         </AnimateIn>
 

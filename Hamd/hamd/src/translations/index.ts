@@ -10,8 +10,8 @@ export const translations = {
   },
   hero: {
     badge:      { en: 'Licensed Foreign Employment Agency', ar: 'وكالة توظيف خارجي مرخصة' },
-    headline:   { en: 'Professional House Maid & Employment Placement', ar: 'توظيف عمالة منزلية ومهنية محترفة' },
-    subline:    { en: 'We connect qualified Ethiopian workers — domestic staff, drivers, and skilled professionals — with trusted employers across the Gulf region.', ar: 'نربط العمال الإثيوبيين المؤهلين — العمالة المنزلية والسائقين والمهنيين — بأصحاب العمل الموثوقين في منطقة الخليج.' },
+    headline:   { en: 'Trusted Ethiopian Workforce for Gulf Employers', ar: 'كفاءات إثيوبية موثوقة لأصحاب العمل في الخليج' },
+    subline:    { en: 'We place qualified Ethiopian domestic workers, drivers, and skilled professionals with reputable families and businesses across Saudi Arabia, UAE, Qatar, Kuwait, and beyond.', ar: 'نوظّف عمالة منزلية إثيوبية مؤهلة، وسائقين، ومهنيين لدى العائلات والشركات الموثوقة في السعودية والإمارات وقطر والكويت وغيرها.' },
     cta:        { en: 'Get in Touch',    ar: 'تواصل معنا' },
     ctaSecond:  { en: 'Our Services',   ar: 'خدماتنا' },
   },
