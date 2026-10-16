@@ -18,8 +18,8 @@ function StaffCard({ member, lang }: {
         <Image
           src={src}
           alt={member.nameEn}
-          width={400}
-          height={500}
+          width={600}
+          height={750}
           className="w-full h-auto block"
           onError={() => setImgError(true)}
         />
@@ -57,9 +57,11 @@ export default function Staff() {
           <p className="text-gray-500 text-sm max-w-xl mx-auto">{s.subtitle[lang]}</p>
         </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-5">
+        <div className="flex flex-wrap justify-center gap-6">
           {s.members.map((m) => (
-            <StaffCard key={m.initials} member={m} lang={lang} />
+            <div key={m.initials} className="w-[calc(50%-12px)] sm:w-56 lg:w-72">
+              <StaffCard member={m} lang={lang} />
+            </div>
           ))}
         </div>
 
