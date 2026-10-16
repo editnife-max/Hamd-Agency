@@ -80,7 +80,7 @@ export default function Hero() {
               <div className="absolute -bottom-8 -right-8 w-full h-full rounded-2xl border border-[#c9a227]/08" />
               <div className="relative rounded-2xl overflow-hidden shadow-[0_32px_80px_rgba(0,0,0,0.6)]">
                 <Image
-                  src="/images/maid-hero.jpg"
+                  src="/images/maid-hero.png"
                   alt="Professional house maid services"
                   width={800}
                   height={600}
