@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import Image from 'next/image'
 import { useLanguage } from '@/context/LanguageContext'
+import AnimateIn from './AnimateIn'
 
 function StaffCard({ member, lang }: {
   member: { nameEn: string; nameAr: string; titleEn: string; titleAr: string; initials: string }
@@ -14,14 +15,16 @@ function StaffCard({ member, lang }: {
   return (
     <div className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
       {!imgError ? (
-        <Image
-          src={src}
-          alt={member.nameEn}
-          width={600}
-          height={750}
-          className="w-full h-auto block"
-          onError={() => setImgError(true)}
-        />
+        <div className="overflow-hidden">
+          <Image
+            src={src}
+            alt={member.nameEn}
+            width={600}
+            height={750}
+            className="w-full h-auto block transition-transform duration-500 hover:scale-[1.04]"
+            onError={() => setImgError(true)}
+          />
+        </div>
       ) : (
         <div className="w-full aspect-[3/4] bg-[#1a2744] flex items-center justify-center">
           <span className="font-display text-[#c9a227] font-bold text-4xl">{member.initials}</span>
@@ -47,15 +50,17 @@ export default function Staff() {
     <section id="staff" className="bg-[#f8fafc] py-24 px-4">
       <div className="max-w-6xl mx-auto">
 
-        <div className="mb-14">
+        <AnimateIn className="mb-14">
           <h2 className="font-display text-4xl sm:text-5xl font-bold text-[#1a2744] mb-4">{s.title[lang]}</h2>
           <div className="w-12 h-0.5 bg-[#c9a227] mb-4" />
           <p className="text-gray-400 text-sm">{s.subtitle[lang]}</p>
-        </div>
+        </AnimateIn>
 
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-5">
-          {s.members.map((m) => (
-            <StaffCard key={m.initials} member={m} lang={lang} />
+          {s.members.map((m, i) => (
+            <AnimateIn key={m.initials} delay={i * 80}>
+              <StaffCard member={m} lang={lang} />
+            </AnimateIn>
           ))}
         </div>
 

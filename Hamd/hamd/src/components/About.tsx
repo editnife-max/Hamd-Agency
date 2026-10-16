@@ -2,6 +2,7 @@
 
 import { Check } from 'lucide-react'
 import { useLanguage } from '@/context/LanguageContext'
+import AnimateIn from './AnimateIn'
 
 const HIGHLIGHTS = [
   { en: 'Fully licensed by the Ethiopian government', ar: 'مرخصة رسمياً من الحكومة الإثيوبية' },
@@ -23,8 +24,8 @@ export default function About() {
   return (
     <section id="about" className="bg-white">
 
-      {/* Bold stats banner */}
-      <div className="border-b border-gray-100">
+      {/* Stats banner */}
+      <AnimateIn animation="fade-in" className="border-b border-gray-100">
         <div className="max-w-6xl mx-auto px-4">
           <div className="grid grid-cols-3 divide-x divide-gray-100">
             {stats.map((s) => (
@@ -35,23 +36,23 @@ export default function About() {
             ))}
           </div>
         </div>
-      </div>
+      </AnimateIn>
 
       {/* Content */}
       <div className="max-w-6xl mx-auto px-4 py-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
 
           {/* Left */}
-          <div>
+          <AnimateIn>
             <h2 className="font-display text-4xl sm:text-5xl font-bold text-[#1a2744] mb-5 leading-tight">
               {a.title[lang]}
             </h2>
             <div className="w-12 h-0.5 bg-[#c9a227] mb-7" />
             <p className="text-gray-500 text-base leading-relaxed">{a.description[lang]}</p>
-          </div>
+          </AnimateIn>
 
           {/* Right */}
-          <div className="flex flex-col gap-4">
+          <AnimateIn delay={150} className="flex flex-col gap-4">
             <ul className="space-y-4">
               {HIGHLIGHTS.map((h) => (
                 <li key={h.en} className="flex items-start gap-3">
@@ -76,7 +77,7 @@ export default function About() {
                 </p>
               </div>
             </div>
-          </div>
+          </AnimateIn>
 
         </div>
       </div>

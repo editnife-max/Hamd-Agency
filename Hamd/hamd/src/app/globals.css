@@ -17,11 +17,46 @@ body {
   background: var(--background);
   font-family: var(--font-inter), system-ui, sans-serif;
   padding-top: 4rem;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 [dir="rtl"] body,
 [dir="rtl"] {
   font-family: var(--font-arabic), system-ui, sans-serif;
+}
+
+/* ─── Keyframes ───────────────────────────────────── */
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(22px); }
+  to   { opacity: 1; transform: translateY(0);    }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* ─── Animation utility classes ───────────────────── */
+.anim-slide-up {
+  animation: slideUp 0.65s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.anim-fade-in {
+  animation: fadeIn 0.8s ease both;
+}
+
+/* ─── Respect reduced motion ─────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .anim-slide-up,
+  .anim-fade-in {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
 }
 
 @layer utilities {

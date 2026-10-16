@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Inter, Playfair_Display } from 'next/font/google'
+import { Inter, Manrope } from 'next/font/google'
 import { Noto_Naskh_Arabic } from 'next/font/google'
 import { LanguageProvider } from '@/context/LanguageContext'
 import HtmlWrapper from '@/components/HtmlWrapper'
@@ -10,10 +10,10 @@ const inter = Inter({
   variable: '--font-inter',
 })
 
-const playfair = Playfair_Display({
+const manrope = Manrope({
   subsets: ['latin'],
   variable: '--font-display',
-  weight: ['400', '600', '700'],
+  weight: ['500', '600', '700', '800'],
 })
 
 const notoNaskhArabic = Noto_Naskh_Arabic({
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <LanguageProvider>
-      <HtmlWrapper className={`${inter.variable} ${notoNaskhArabic.variable} ${playfair.variable}`}>
+      <HtmlWrapper className={`${inter.variable} ${notoNaskhArabic.variable} ${manrope.variable}`}>
         {children}
       </HtmlWrapper>
     </LanguageProvider>
