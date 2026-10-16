@@ -14,13 +14,13 @@ function StaffCard({ member, lang }: {
   return (
     <div className="bg-white border border-gray-100 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
       {/* Photo */}
-      <div className="relative w-full aspect-square bg-[#1a2744]">
+      <div className="relative w-full aspect-[3/4] bg-[#1a2744]">
         {!imgError ? (
           <Image
             src={src}
             alt={member.nameEn}
             fill
-            className="object-cover"
+            className="object-contain"
             onError={() => setImgError(true)}
           />
         ) : (
