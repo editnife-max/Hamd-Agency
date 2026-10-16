@@ -14,21 +14,20 @@ function StaffCard({ member, lang }: {
   return (
     <div className="bg-white border border-gray-100 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
       {/* Photo */}
-      <div className="relative w-full aspect-[3/4] bg-[#1a2744]">
-        {!imgError ? (
-          <Image
-            src={src}
-            alt={member.nameEn}
-            fill
-            className="object-contain"
-            onError={() => setImgError(true)}
-          />
-        ) : (
-          <div className="absolute inset-0 flex items-center justify-center">
-            <span className="text-[#c9a227] font-bold text-3xl">{member.initials}</span>
-          </div>
-        )}
-      </div>
+      {!imgError ? (
+        <Image
+          src={src}
+          alt={member.nameEn}
+          width={400}
+          height={500}
+          className="w-full h-auto block"
+          onError={() => setImgError(true)}
+        />
+      ) : (
+        <div className="w-full aspect-[3/4] bg-[#1a2744] flex items-center justify-center">
+          <span className="text-[#c9a227] font-bold text-3xl">{member.initials}</span>
+        </div>
+      )}
 
       {/* Info */}
       <div className="p-4 text-center">
