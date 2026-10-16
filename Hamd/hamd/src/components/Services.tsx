@@ -13,15 +13,15 @@ export default function Services() {
   const s = t.services
 
   return (
-    <section id="services" className="py-24 px-4"
+    <section id="services" className="py-16 sm:py-24 px-4"
       style={{ background: 'linear-gradient(160deg, #08111c 0%, #1a2744 100%)' }}>
       <div className="max-w-6xl mx-auto">
 
-        <AnimateIn className="mb-14">
+        <AnimateIn className="mb-10 sm:mb-14">
           <p className="text-[#c9a227] text-xs font-semibold tracking-widest uppercase mb-4">
             {lang === 'en' ? 'What We Offer' : 'ما نقدمه'}
           </p>
-          <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-4">
+          <h2 className="font-display text-3xl sm:text-4xl lg:text-6xl font-bold text-white mb-4">
             {s.title[lang]}
           </h2>
           <div className="w-10 h-0.5 bg-[#c9a227] mb-5" />
@@ -33,7 +33,7 @@ export default function Services() {
             const Icon = ICON_MAP[item.icon] ?? Home
             return (
               <AnimateIn key={item.en} delay={i * 90}>
-                <div className="group relative border border-white/[0.08] rounded-2xl p-7 h-full
+                <div className="group relative border border-white/[0.08] rounded-2xl p-5 sm:p-7 h-full
                   hover:border-[#c9a227]/35 hover:bg-white/[0.04] hover:-translate-y-1
                   transition-[border-color,background-color,transform] duration-300 cursor-default overflow-hidden">
                   {/* Subtle gold shimmer on top edge on hover */}

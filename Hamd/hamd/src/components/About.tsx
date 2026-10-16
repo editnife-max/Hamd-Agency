@@ -29,8 +29,8 @@ export default function About() {
         <div className="max-w-6xl mx-auto px-4">
           <div className="grid grid-cols-3 divide-x divide-gray-100">
             {stats.map((s) => (
-              <div key={s.label} className="py-12 sm:py-16 text-center">
-                <p className="font-display text-5xl sm:text-6xl lg:text-7xl font-bold text-[#1a2744] leading-none mb-2">{s.value}</p>
+              <div key={s.label} className="py-8 sm:py-12 lg:py-16 text-center">
+                <p className="font-display text-4xl sm:text-6xl lg:text-7xl font-bold text-[#1a2744] leading-none mb-2">{s.value}</p>
                 <div className="w-7 h-0.5 bg-[#c9a227] mx-auto mb-2" />
                 <p className="text-gray-400 text-sm">{s.label}</p>
               </div>
@@ -40,15 +40,15 @@ export default function About() {
       </AnimateIn>
 
       {/* Content */}
-      <div className="max-w-6xl mx-auto px-4 py-20">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+      <div className="max-w-6xl mx-auto px-4 py-14 sm:py-20">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-start">
 
           {/* Left */}
           <AnimateIn>
             <p className="text-[#c9a227] text-xs font-semibold tracking-widest uppercase mb-4">
               {lang === 'en' ? 'Who We Are' : 'من نحن'}
             </p>
-            <h2 className="font-display text-4xl sm:text-5xl font-bold text-[#1a2744] mb-5 leading-tight">
+            <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-[#1a2744] mb-5 leading-tight">
               {a.title[lang]}
             </h2>
             <div className="w-10 h-0.5 bg-[#c9a227] mb-7" />

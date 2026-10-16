@@ -12,8 +12,8 @@ export default function Footer() {
     <footer style={{ background: 'linear-gradient(160deg, #08111c 0%, #1a2744 100%)' }} className="text-white">
       <div className="h-0.5 bg-[#c9a227]" />
 
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-10">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-12 mb-10">
 
           <div>
             <div className="flex items-center gap-3 mb-4">

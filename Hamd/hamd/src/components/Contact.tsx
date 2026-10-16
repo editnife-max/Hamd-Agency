@@ -19,14 +19,14 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" className="bg-[#f8fafc] py-24 px-4">
+    <section id="contact" className="bg-[#f8fafc] py-16 sm:py-24 px-4">
       <div className="max-w-6xl mx-auto">
 
-        <AnimateIn animation="fade-in" className="text-center mb-14">
+        <AnimateIn animation="fade-in" className="text-center mb-10 sm:mb-14">
           <p className="text-[#c9a227] text-xs font-semibold tracking-widest uppercase mb-4">
             {lang === 'en' ? 'Reach Out' : 'تواصل معنا'}
           </p>
-          <h2 className="font-display text-4xl sm:text-5xl font-bold text-[#1a2744] mb-4">{c.title[lang]}</h2>
+          <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-[#1a2744] mb-4">{c.title[lang]}</h2>
           <div className="w-10 h-0.5 bg-[#c9a227] mx-auto mb-4" />
           <p className="text-gray-500 text-sm">{c.subtitle[lang]}</p>
         </AnimateIn>
@@ -34,7 +34,7 @@ export default function Contact() {
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-6">
 
           {/* Left info panel */}
-          <AnimateIn className="lg:col-span-2 bg-[#1a2744] rounded-2xl p-8 flex flex-col gap-6">
+          <AnimateIn className="lg:col-span-2 bg-[#1a2744] rounded-2xl p-5 sm:p-8 flex flex-col gap-6">
             <div className="flex flex-col gap-5">
               <div className="flex gap-4 items-start">
                 <div className="w-9 h-9 rounded-lg bg-white/10 flex items-center justify-center shrink-0">
@@ -89,7 +89,7 @@ export default function Contact() {
 
           {/* Right — form */}
           <AnimateIn delay={150} className="lg:col-span-3">
-            <form onSubmit={handleSubmit} className="bg-white rounded-2xl p-8 shadow-sm flex flex-col gap-5">
+            <form onSubmit={handleSubmit} className="bg-white rounded-2xl p-5 sm:p-8 shadow-sm flex flex-col gap-5">
               {sent && (
                 <div className="bg-[#1a5c28]/10 border border-[#1a5c28]/20 text-[#1a5c28] text-sm rounded-lg px-4 py-3 anim-fade-in">
                   {c.form.success[lang]}
@@ -126,7 +126,7 @@ export default function Contact() {
                 />
               </div>
               <button type="submit"
-                className="bg-[#1a2744] hover:bg-[#243566] hover:-translate-y-0.5 active:translate-y-0
+                className="w-full bg-[#1a2744] hover:bg-[#243566] hover:-translate-y-0.5 active:translate-y-0
                   text-white font-semibold px-6 py-3.5 rounded-xl
                   transition-[background-color,transform] duration-150 text-sm">
                 {c.form.send[lang]}
