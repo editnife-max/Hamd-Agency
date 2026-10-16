@@ -26,7 +26,9 @@ export default function Footer() {
               />
               <div>
                 <p className="font-display text-[#c9a227] font-bold text-2xl leading-tight">HAMD</p>
-                <p className="text-white/30 text-[10px] tracking-widest uppercase leading-tight">Foreign Employment Agent PLC</p>
+                <p className="text-white/30 text-[10px] tracking-widest uppercase leading-tight">
+                  {lang === 'en' ? 'Foreign Employment Agent PLC' : 'مكتب حمد للإستقدام'}
+                </p>
               </div>
             </div>
             <p className="text-white/45 text-sm leading-relaxed max-w-xs">{t.footer.tagline[lang]}</p>

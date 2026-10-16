@@ -74,7 +74,7 @@ export default function Hero() {
             </h1>
             <p className="text-white/40 text-[11px] tracking-[0.26em] uppercase mb-8 anim-slide-up"
               style={{ animationDelay: '200ms' }}>
-              Foreign Employment Agent PLC &nbsp;·&nbsp; مكتب حمد للإستقدام
+              {lang === 'en' ? 'Foreign Employment Agent PLC' : 'مكتب حمد للإستقدام'}
             </p>
 
             {/* Gold rule */}
