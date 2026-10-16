@@ -9,7 +9,7 @@ function StaffCard({ member, lang }: {
   lang: 'en' | 'ar'
 }) {
   const [imgError, setImgError] = useState(false)
-  const src = `/images/staff/${member.initials}.jpg`
+  const src = `/images/staff/${member.initials}.png`
 
   return (
     <div className="bg-white border border-gray-100 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
@@ -64,11 +64,6 @@ export default function Staff() {
           ))}
         </div>
 
-        <p className="text-center text-gray-400 text-xs mt-8">
-          {lang === 'en'
-            ? 'Replace placeholder images with real staff photos in /public/images/staff/'
-            : 'استبدل الصور التجريبية بصور حقيقية في /public/images/staff/'}
-        </p>
       </div>
     </section>
   )
