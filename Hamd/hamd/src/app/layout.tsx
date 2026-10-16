@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Inter, Playfair_Display } from 'next/font/google'
 import { Noto_Naskh_Arabic } from 'next/font/google'
 import { LanguageProvider } from '@/context/LanguageContext'
 import HtmlWrapper from '@/components/HtmlWrapper'
@@ -8,6 +8,12 @@ import './globals.css'
 const inter = Inter({
   subsets: ['latin'],
   variable: '--font-inter',
+})
+
+const playfair = Playfair_Display({
+  subsets: ['latin'],
+  variable: '--font-display',
+  weight: ['400', '600', '700'],
 })
 
 const notoNaskhArabic = Noto_Naskh_Arabic({
@@ -24,7 +30,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <LanguageProvider>
-      <HtmlWrapper className={`${inter.variable} ${notoNaskhArabic.variable}`}>
+      <HtmlWrapper className={`${inter.variable} ${notoNaskhArabic.variable} ${playfair.variable}`}>
         {children}
       </HtmlWrapper>
     </LanguageProvider>

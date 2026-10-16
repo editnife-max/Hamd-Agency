@@ -1,6 +1,6 @@
 'use client'
 
-import { CheckCircle } from 'lucide-react'
+import { Check } from 'lucide-react'
 import { useLanguage } from '@/context/LanguageContext'
 
 const HIGHLIGHTS = [
@@ -21,44 +21,51 @@ export default function About() {
   ]
 
   return (
-    <section id="about" className="bg-[#f8f5be] py-20 px-4">
+    <section id="about" className="bg-white py-24 px-4">
       <div className="max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
 
-        {/* Section header */}
-        <div className="text-center mb-14">
-          <p className="text-[#1a5c28] text-xs font-bold tracking-widest uppercase mb-2">Who We Are</p>
-          <h2 className="text-3xl sm:text-4xl font-bold text-[#1a2744] mb-4">{a.title[lang]}</h2>
-          <div className="w-12 h-1 bg-[#c9a227] mx-auto" />
-        </div>
-
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-          {/* Left: description + highlights */}
+          {/* Left */}
           <div>
-            <p className="text-gray-700 text-base leading-relaxed mb-8">{a.description[lang]}</p>
-            <ul className="space-y-3">
+            <h2 className="font-display text-4xl sm:text-5xl font-bold text-[#1a2744] mb-5 leading-tight">
+              {a.title[lang]}
+            </h2>
+            <div className="w-14 h-0.5 bg-[#c9a227] mb-8" />
+            <p className="text-gray-600 text-base leading-relaxed mb-9">{a.description[lang]}</p>
+            <ul className="space-y-3.5">
               {HIGHLIGHTS.map((h) => (
                 <li key={h.en} className="flex items-start gap-3">
-                  <CheckCircle size={18} className="text-[#1a5c28] mt-0.5 shrink-0" />
-                  <span className="text-gray-700 text-sm">{h[lang]}</span>
+                  <span className="w-5 h-5 rounded-full bg-[#1a2744] flex items-center justify-center shrink-0 mt-0.5">
+                    <Check size={11} className="text-[#c9a227]" strokeWidth={3} />
+                  </span>
+                  <span className="text-gray-600 text-sm leading-relaxed">{h[lang]}</span>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Right: stats + license badge */}
+          {/* Right */}
           <div className="flex flex-col gap-6">
-            <div className="grid grid-cols-3 gap-4">
-              {stats.map((s) => (
-                <div key={s.label} className="bg-white border border-[#c9a227]/20 rounded-xl p-5 text-center shadow-sm">
-                  <p className="text-[#1a2744] font-extrabold text-3xl mb-1">{s.value}</p>
-                  <p className="text-gray-500 text-xs font-medium leading-tight">{s.label}</p>
+            {/* Big stats */}
+            <div className="grid grid-cols-3 gap-0 border border-gray-100 rounded-2xl overflow-hidden">
+              {stats.map((s, i) => (
+                <div key={s.label}
+                  className={`text-center py-8 px-4 ${i < 2 ? 'border-r border-gray-100' : ''}`}>
+                  <p className="font-display text-4xl sm:text-5xl font-bold text-[#1a2744] mb-1.5">{s.value}</p>
+                  <p className="text-gray-400 text-xs leading-snug">{s.label}</p>
                 </div>
               ))}
             </div>
 
-            <div className="bg-[#1a2744] rounded-xl p-6 text-center">
-              <p className="text-[#c9a227] text-xs font-bold tracking-widest uppercase mb-2">✓ {a.license[lang]}</p>
-              <p className="text-white/60 text-xs leading-relaxed">
+            {/* License card */}
+            <div className="bg-[#1a2744] rounded-2xl p-7">
+              <div className="flex items-center gap-3 mb-3">
+                <div className="w-10 h-10 rounded-full bg-[#c9a227]/15 border border-[#c9a227]/30 flex items-center justify-center shrink-0">
+                  <Check size={16} className="text-[#c9a227]" strokeWidth={3} />
+                </div>
+                <p className="text-[#c9a227] font-semibold text-sm">{a.license[lang]}</p>
+              </div>
+              <p className="text-white/50 text-sm leading-relaxed">
                 {lang === 'en'
                   ? 'Operating under Ethiopian Ministry of Labour & Skills regulation'
                   : 'تعمل وفق لوائح وزارة العمل والمهارات الإثيوبية'}

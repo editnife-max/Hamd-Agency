@@ -41,7 +41,10 @@ export const translations = {
     title:    { en: 'Our Services', ar: 'خدماتنا' },
     subtitle: { en: 'Qualified, vetted, and ready to work', ar: 'مؤهلون وموثوقون وجاهزون للعمل' },
     items: [
-      { en: 'House Maids',          ar: 'عاملات المنازل',     desc_en: 'Experienced domestic workers for households', desc_ar: 'عمالة منزلية متمرسة للأسر', icon: 'Home' },
+      { en: 'House Maids',          ar: 'عاملات المنازل',   desc_en: 'Experienced domestic workers for households across the Gulf',     desc_ar: 'عمالة منزلية متمرسة للأسر في منطقة الخليج',            icon: 'Home' },
+      { en: 'Professional Drivers', ar: 'سائقون محترفون',   desc_en: 'Licensed drivers with clean records for families and businesses', desc_ar: 'سائقون مرخصون بسجلات نظيفة للعائلات والشركات',         icon: 'Car' },
+      { en: 'Caregivers',           ar: 'مقدمو الرعاية',    desc_en: 'Trained caregivers for elderly and special-needs individuals',    desc_ar: 'مقدمو رعاية مدربون لكبار السن وذوي الاحتياجات الخاصة', icon: 'Heart' },
+      { en: 'Administrative Staff', ar: 'موظفون إداريون',   desc_en: 'Office assistants, receptionists, and front-desk support staff', desc_ar: 'مساعدون إداريون وموظفو استقبال وطاقم دعم',             icon: 'Briefcase' },
     ],
   },
   staff: {

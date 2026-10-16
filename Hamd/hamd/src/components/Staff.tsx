@@ -12,7 +12,7 @@ function StaffCard({ member, lang }: {
   const src = `/images/staff/${member.initials}.png`
 
   return (
-    <div className="bg-white border border-gray-100 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+    <div className="bg-white border border-gray-100 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
       {/* Photo */}
       {!imgError ? (
         <Image
@@ -47,12 +47,11 @@ export default function Staff() {
   const s = t.staff
 
   return (
-    <section id="staff" className="bg-[#f8f5be] py-20 px-4">
+    <section id="staff" className="bg-[#f8fafc] py-24 px-4">
       <div className="max-w-6xl mx-auto">
 
         <div className="text-center mb-14">
-          <p className="text-[#1a5c28] text-xs font-bold tracking-widest uppercase mb-2">Our People</p>
-          <h2 className="text-3xl sm:text-4xl font-bold text-[#1a2744] mb-4">{s.title[lang]}</h2>
+          <h2 className="font-display text-4xl sm:text-5xl font-bold text-[#1a2744] mb-4">{s.title[lang]}</h2>
           <div className="w-12 h-1 bg-[#c9a227] mx-auto mb-4" />
           <p className="text-gray-500 text-sm max-w-xl mx-auto">{s.subtitle[lang]}</p>
         </div>

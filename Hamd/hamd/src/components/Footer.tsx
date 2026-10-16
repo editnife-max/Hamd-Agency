@@ -18,7 +18,7 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <div className="mb-4">
-              <p className="text-[#c9a227] font-bold text-xl tracking-wide">HAMD</p>
+              <p className="font-display text-[#c9a227] font-bold text-2xl">HAMD</p>
               <p className="text-white/40 text-[10px] tracking-widest uppercase">Foreign Employment Agent PLC</p>
             </div>
             <p className="text-white/50 text-xs leading-relaxed max-w-xs">{t.footer.tagline[lang]}</p>
