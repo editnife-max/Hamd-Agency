@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { Menu, X } from 'lucide-react'
+import Image from 'next/image'
 import { useLanguage } from '@/context/LanguageContext'
 
 const NAV_LINKS = ['home', 'about', 'services', 'staff', 'contact'] as const
@@ -31,9 +32,18 @@ export default function Navbar() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
 
-          <a href="#home" onClick={close} className="flex flex-col leading-tight group">
-            <span className="font-display text-[#c9a227] font-bold text-xl tracking-wide group-hover:text-[#dbb42c] transition-colors">HAMD</span>
-            <span className="text-white/35 text-[10px] tracking-widest hidden sm:block">Foreign Employment Agent PLC</span>
+          <a href="#home" onClick={close} className="flex items-center gap-3 group">
+            <Image
+              src="/images/logo-emblem.png"
+              alt="HAMD logo"
+              width={38}
+              height={38}
+              className="rounded-sm object-contain shrink-0 transition-opacity duration-200 group-hover:opacity-85"
+            />
+            <div className="flex flex-col leading-tight">
+              <span className="font-display text-[#c9a227] font-bold text-xl tracking-wide group-hover:text-[#dbb42c] transition-colors">HAMD</span>
+              <span className="text-white/35 text-[10px] tracking-widest hidden sm:block">Foreign Employment Agent PLC</span>
+            </div>
           </a>
 
           <div className="hidden md:flex items-center gap-1">
