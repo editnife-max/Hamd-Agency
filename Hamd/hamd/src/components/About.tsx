@@ -21,8 +21,24 @@ export default function About() {
   ]
 
   return (
-    <section id="about" className="bg-white py-24 px-4">
-      <div className="max-w-6xl mx-auto">
+    <section id="about" className="bg-white">
+
+      {/* Bold stats banner */}
+      <div className="border-b border-gray-100">
+        <div className="max-w-6xl mx-auto px-4">
+          <div className="grid grid-cols-3 divide-x divide-gray-100">
+            {stats.map((s) => (
+              <div key={s.label} className="py-12 sm:py-16 text-center">
+                <p className="font-display text-5xl sm:text-6xl lg:text-7xl font-bold text-[#1a2744] mb-1">{s.value}</p>
+                <p className="text-gray-400 text-sm">{s.label}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Content */}
+      <div className="max-w-6xl mx-auto px-4 py-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
 
           {/* Left */}
@@ -30,48 +46,38 @@ export default function About() {
             <h2 className="font-display text-4xl sm:text-5xl font-bold text-[#1a2744] mb-5 leading-tight">
               {a.title[lang]}
             </h2>
-            <div className="w-14 h-0.5 bg-[#c9a227] mb-8" />
-            <p className="text-gray-600 text-base leading-relaxed mb-9">{a.description[lang]}</p>
-            <ul className="space-y-3.5">
-              {HIGHLIGHTS.map((h) => (
-                <li key={h.en} className="flex items-start gap-3">
-                  <span className="w-5 h-5 rounded-full bg-[#1a2744] flex items-center justify-center shrink-0 mt-0.5">
-                    <Check size={11} className="text-[#c9a227]" strokeWidth={3} />
-                  </span>
-                  <span className="text-gray-600 text-sm leading-relaxed">{h[lang]}</span>
-                </li>
-              ))}
-            </ul>
+            <div className="w-12 h-0.5 bg-[#c9a227] mb-7" />
+            <p className="text-gray-500 text-base leading-relaxed">{a.description[lang]}</p>
           </div>
 
           {/* Right */}
-          <div className="flex flex-col gap-6">
-            {/* Big stats */}
-            <div className="grid grid-cols-3 gap-0 border border-gray-100 rounded-2xl overflow-hidden">
-              {stats.map((s, i) => (
-                <div key={s.label}
-                  className={`text-center py-8 px-4 ${i < 2 ? 'border-r border-gray-100' : ''}`}>
-                  <p className="font-display text-4xl sm:text-5xl font-bold text-[#1a2744] mb-1.5">{s.value}</p>
-                  <p className="text-gray-400 text-xs leading-snug">{s.label}</p>
-                </div>
+          <div className="flex flex-col gap-4">
+            <ul className="space-y-4">
+              {HIGHLIGHTS.map((h) => (
+                <li key={h.en} className="flex items-start gap-3">
+                  <span className="w-5 h-5 rounded-full bg-[#1a2744] flex items-center justify-center shrink-0 mt-0.5">
+                    <Check size={10} className="text-[#c9a227]" strokeWidth={3} />
+                  </span>
+                  <span className="text-gray-500 text-sm leading-relaxed">{h[lang]}</span>
+                </li>
               ))}
-            </div>
+            </ul>
 
-            {/* License card */}
-            <div className="bg-[#1a2744] rounded-2xl p-7">
-              <div className="flex items-center gap-3 mb-3">
-                <div className="w-10 h-10 rounded-full bg-[#c9a227]/15 border border-[#c9a227]/30 flex items-center justify-center shrink-0">
-                  <Check size={16} className="text-[#c9a227]" strokeWidth={3} />
-                </div>
-                <p className="text-[#c9a227] font-semibold text-sm">{a.license[lang]}</p>
+            <div className="mt-2 bg-[#1a2744] rounded-2xl p-6 flex items-start gap-4">
+              <div className="w-9 h-9 rounded-full bg-[#c9a227]/15 border border-[#c9a227]/25 flex items-center justify-center shrink-0">
+                <Check size={14} className="text-[#c9a227]" strokeWidth={3} />
               </div>
-              <p className="text-white/50 text-sm leading-relaxed">
-                {lang === 'en'
-                  ? 'Operating under Ethiopian Ministry of Labour & Skills regulation'
-                  : 'تعمل وفق لوائح وزارة العمل والمهارات الإثيوبية'}
-              </p>
+              <div>
+                <p className="text-[#c9a227] font-semibold text-sm mb-1">{a.license[lang]}</p>
+                <p className="text-white/45 text-sm leading-relaxed">
+                  {lang === 'en'
+                    ? 'Operating under Ethiopian Ministry of Labour & Skills regulation'
+                    : 'تعمل وفق لوائح وزارة العمل والمهارات الإثيوبية'}
+                </p>
+              </div>
             </div>
           </div>
+
         </div>
       </div>
     </section>

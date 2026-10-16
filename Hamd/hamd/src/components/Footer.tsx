@@ -8,31 +8,26 @@ export default function Footer() {
   const { lang, t } = useLanguage()
 
   return (
-    <footer className="bg-[#1a2744] text-white">
-      {/* Gold top line */}
-      <div className="h-1 bg-[#c9a227]" />
+    <footer style={{ background: 'linear-gradient(160deg, #08111c 0%, #1a2744 100%)' }} className="text-white">
+      <div className="h-0.5 bg-[#c9a227]" />
 
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-10">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-10">
 
-          {/* Brand */}
           <div>
-            <div className="mb-4">
-              <p className="font-display text-[#c9a227] font-bold text-2xl">HAMD</p>
-              <p className="text-white/40 text-[10px] tracking-widest uppercase">Foreign Employment Agent PLC</p>
-            </div>
-            <p className="text-white/50 text-xs leading-relaxed max-w-xs">{t.footer.tagline[lang]}</p>
+            <p className="font-display text-[#c9a227] font-bold text-3xl mb-1">HAMD</p>
+            <p className="text-white/30 text-[10px] tracking-widest uppercase mb-5">Foreign Employment Agent PLC</p>
+            <p className="text-white/45 text-sm leading-relaxed max-w-xs">{t.footer.tagline[lang]}</p>
           </div>
 
-          {/* Quick links */}
           <div>
-            <p className="text-[#c9a227] text-xs font-bold tracking-widest uppercase mb-4">
-              {lang === 'en' ? 'Quick Links' : 'روابط سريعة'}
+            <p className="text-white/50 text-xs font-semibold uppercase tracking-widest mb-5">
+              {lang === 'en' ? 'Navigation' : 'روابط سريعة'}
             </p>
-            <ul className="space-y-2">
+            <ul className="space-y-2.5">
               {NAV_LINKS.map(key => (
                 <li key={key}>
-                  <a href={`#${key}`} className="text-white/50 hover:text-white text-sm transition-colors">
+                  <a href={`#${key}`} className="text-white/45 hover:text-[#c9a227] text-sm transition-colors">
                     {t.nav[key][lang]}
                   </a>
                 </li>
@@ -40,26 +35,26 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Contact summary */}
           <div>
-            <p className="text-[#c9a227] text-xs font-bold tracking-widest uppercase mb-4">
+            <p className="text-white/50 text-xs font-semibold uppercase tracking-widest mb-5">
               {lang === 'en' ? 'Contact' : 'اتصل بنا'}
             </p>
-            <ul className="space-y-2 text-sm text-white/50">
+            <ul className="space-y-2.5 text-sm text-white/45">
               <li>{t.contact.address[lang]}</li>
               <li>{t.contact.phone1[lang]}</li>
               <li>{t.contact.phone2[lang]}</li>
               <li>
-                <a href={`mailto:${t.contact.email[lang]}`} className="hover:text-white transition-colors">
+                <a href={`mailto:${t.contact.email[lang]}`} className="hover:text-[#c9a227] transition-colors">
                   {t.contact.email[lang]}
                 </a>
               </li>
             </ul>
           </div>
+
         </div>
 
-        <div className="border-t border-white/10 pt-6 text-center">
-          <p className="text-white/30 text-xs">{t.footer.copyright[lang]}</p>
+        <div className="border-t border-white/10 pt-7 text-center">
+          <p className="text-white/25 text-xs">{t.footer.copyright[lang]}</p>
         </div>
       </div>
     </footer>

@@ -12,8 +12,7 @@ function StaffCard({ member, lang }: {
   const src = `/images/staff/${member.initials}.png`
 
   return (
-    <div className="bg-white border border-gray-100 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
-      {/* Photo */}
+    <div className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
       {!imgError ? (
         <Image
           src={src}
@@ -25,13 +24,11 @@ function StaffCard({ member, lang }: {
         />
       ) : (
         <div className="w-full aspect-[3/4] bg-[#1a2744] flex items-center justify-center">
-          <span className="text-[#c9a227] font-bold text-3xl">{member.initials}</span>
+          <span className="font-display text-[#c9a227] font-bold text-4xl">{member.initials}</span>
         </div>
       )}
-
-      {/* Info */}
-      <div className="p-4 text-center">
-        <p className="text-[#1a2744] font-semibold text-sm">
+      <div className="px-4 py-4 border-t border-gray-100">
+        <p className="font-display text-[#1a2744] font-bold text-base">
           {lang === 'ar' ? member.nameAr : member.nameEn}
         </p>
         <p className="text-gray-400 text-xs mt-0.5">
@@ -50,17 +47,15 @@ export default function Staff() {
     <section id="staff" className="bg-[#f8fafc] py-24 px-4">
       <div className="max-w-6xl mx-auto">
 
-        <div className="text-center mb-14">
+        <div className="mb-14">
           <h2 className="font-display text-4xl sm:text-5xl font-bold text-[#1a2744] mb-4">{s.title[lang]}</h2>
-          <div className="w-12 h-1 bg-[#c9a227] mx-auto mb-4" />
-          <p className="text-gray-500 text-sm max-w-xl mx-auto">{s.subtitle[lang]}</p>
+          <div className="w-12 h-0.5 bg-[#c9a227] mb-4" />
+          <p className="text-gray-400 text-sm">{s.subtitle[lang]}</p>
         </div>
 
-        <div className="flex flex-wrap justify-center gap-6">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-5">
           {s.members.map((m) => (
-            <div key={m.initials} className="w-[calc(50%-12px)] sm:w-56 lg:w-72">
-              <StaffCard member={m} lang={lang} />
-            </div>
+            <StaffCard key={m.initials} member={m} lang={lang} />
           ))}
         </div>
 
