@@ -13,7 +13,7 @@ export default function Hero() {
       {/* Image: full-bleed on mobile → right column on sm+ */}
       <div className="absolute inset-0 sm:inset-y-0 sm:left-auto sm:right-0 sm:w-[46%]">
         <Image
-          src="/images/maid-hero.jpg"
+          src="/images/maid-hero.png"
           alt="Professional house maid services"
           fill
           className="object-cover object-[center_15%]"
