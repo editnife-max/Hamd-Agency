@@ -70,7 +70,7 @@ export default function Hero() {
 
             <h1 className="font-display text-[#c9a227] font-bold text-8xl sm:text-9xl leading-none tracking-tight mb-2 anim-slide-up"
               style={{ animationDelay: '110ms' }}>
-              HAMD
+              {lang === 'en' ? 'HAMD' : 'حمد'}
             </h1>
             <p className="text-white/40 text-[11px] tracking-[0.26em] uppercase mb-8 anim-slide-up"
               style={{ animationDelay: '200ms' }}>

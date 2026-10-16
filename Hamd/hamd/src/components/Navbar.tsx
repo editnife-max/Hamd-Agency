@@ -41,7 +41,7 @@ export default function Navbar() {
               className="rounded-sm object-contain shrink-0 transition-opacity duration-200 group-hover:opacity-85"
             />
             <div className="flex flex-col leading-tight">
-              <span className="font-display text-[#c9a227] font-bold text-xl tracking-wide group-hover:text-[#dbb42c] transition-colors">HAMD</span>
+              <span className="font-display text-[#c9a227] font-bold text-xl tracking-wide group-hover:text-[#dbb42c] transition-colors">{lang === 'en' ? 'HAMD' : 'حمد'}</span>
               <span className="text-white/35 text-[10px] tracking-widest hidden sm:block">
                 {lang === 'en' ? 'Foreign Employment Agent PLC' : 'مكتب حمد للإستقدام'}
               </span>

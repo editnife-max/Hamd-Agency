@@ -25,7 +25,7 @@ export default function Footer() {
                 className="rounded-sm object-contain opacity-90"
               />
               <div>
-                <p className="font-display text-[#c9a227] font-bold text-2xl leading-tight">HAMD</p>
+                <p className="font-display text-[#c9a227] font-bold text-2xl leading-tight">{lang === 'en' ? 'HAMD' : 'حمد'}</p>
                 <p className="text-white/30 text-[10px] tracking-widest uppercase leading-tight">
                   {lang === 'en' ? 'Foreign Employment Agent PLC' : 'مكتب حمد للإستقدام'}
                 </p>
